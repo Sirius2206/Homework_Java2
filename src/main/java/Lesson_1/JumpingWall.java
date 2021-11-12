@@ -1,4 +1,4 @@
-package Lesson1;
+package Lesson_1;
 
 public class JumpingWall implements Obstacle{
     private int height;

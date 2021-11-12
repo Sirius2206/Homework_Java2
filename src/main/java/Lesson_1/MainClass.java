@@ -1,4 +1,4 @@
-package Lesson1;
+package Lesson_1;
 
 //Создайте три класса Человек, Кот, Робот, которые не наследуются от одного класса. Эти классы должны уметь бегать и
 // прыгать (методы просто выводят информацию о действии в консоль).
@@ -17,7 +17,7 @@ public class MainClass {
                 new Human("Аркадий", 500, 4),
                 new Robot("BD-m2", 1000, 1)};
 
-        Obstacle[] obstacles ={
+        Obstacle[] obstacles = {
                 new RunningTrack(200),
                 new JumpingWall(1),
                 new JumpingWall(2),
@@ -25,26 +25,26 @@ public class MainClass {
 
 
         System.out.println("Участники вышли на полосу препятствий и разминаются.");
-        for (int i = 0; i < participants.length; i++){
-            participants[i].running();
-            participants[i].jumping();
+        for (Participant participant : participants) {
+            participant.running();
+            participant.jumping();
             System.out.println();
         }
 
         System.out.println("Соревнования начинаются!");
-        for (int i = 0; i < participants.length; i++){
-            for (int j = 0; j < obstacles.length; j++) {
-                participants[i].overcome(obstacles[j]);
-                if (!participants[i].isSuccess()) {
-                    System.out.println(participants[i].getName() + " выбывает из соревнований");
+        for (Participant participant : participants) {
+            for (Obstacle obstacle : obstacles) {
+                participant.overcome(obstacle);
+                if (!participant.isSuccess()) {
+                    System.out.println(participant.getName() + " выбывает из соревнований");
                     break;
                 }
                 System.out.println();
             }
         }
 
-        for (int i = 0; i < participants.length; i++){
-            if (participants[i].isSuccess()) System.out.println(participants[i].getName() + " преодолел все препятствия!");
+        for (Participant participant : participants) {
+            if (participant.isSuccess()) System.out.println(participant.getName() + " преодолел все препятствия!");
         }
     }
 

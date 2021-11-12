@@ -1,4 +1,4 @@
-package Lesson1;
+package Lesson_1;
 
 public class RunningTrack implements Obstacle{
     private int distance;
