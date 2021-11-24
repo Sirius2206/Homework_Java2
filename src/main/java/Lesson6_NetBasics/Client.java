@@ -12,6 +12,7 @@ public class Client{
         Socket client = new Socket("localhost", 8080);
 
 
+
         PrintWriter out = new PrintWriter(client.getOutputStream());
 
         System.out.println("Введите \"/quit\", чтобы выйти из чата.");

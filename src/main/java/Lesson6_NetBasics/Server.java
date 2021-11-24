@@ -16,7 +16,6 @@ public class Server {
         System.out.println("Клиент подключился.");
         BufferedReader in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
         PrintWriter out = new PrintWriter(socket.getOutputStream());
-
         System.out.println("Введите \"/quit\", чтобы выйти из чата.");
 
         Thread serverMsg = new Thread(() ->{
